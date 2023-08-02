@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>最近播放</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            background-image: url(../images/最近播放2.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .music-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .music-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: rgb(255, 255, 255,0.2);
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .music-list li .artist {
+            color: #666;
+        }
+        .return-bar {
+        position: fixed;
+        top: 80px;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        margin: 20px auto;
+    }
+
+        .return-button {
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .return-button a{
+            text-decoration: none;
+        }
+        .return-button:hover {
+            box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.5);
+            text-decoration: underline;
+            text-decoration-color: black;
+        }
+        .box{
+            width: 100%;
+            height: 100%;
+            background-image: url("../images/最近播放.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <div class="container">
+        <div class="box">
+        <h1>最近播放</h1>
+        <ul class="music-list">
+        <li>
+        <div class="title">1.カナタハルカ</div>
+        <div class="artist">RADWIMPS</div>
+        <audio controls>
+        <source src="../music/RADWIMPS - カナタハルカ.mp3" type="audio/mpeg">
+        </audio>
+        </li>
+        <li>
+        <div class="title">2.すずめの涙 (铃芽之泪)</div>
+        <div class="artist">RADWIMPS</div>
+        <audio controls>
+        <source src="../music/RADWIMPS - すずめの涙 (铃芽之泪).mp3" type="audio/mpeg">
+        </audio>
+        </li>
+        <li>
+        <div class="title">3.愛にできることはまだあるかい (爱能做到的还有什么) (Movie edit)</div>
+        <div class="artist">RADWIMPS</div>
+        <audio controls>
+        <source src="../music/RADWIMPS - 愛にできることはまだあるかい (爱能做到的还有什么) (Movie edit).mp3" type="audio/mpeg">
+        </audio>
+        </li>
+        <li>
+        <div class="title">4.大丈夫 (Movie edit)</div>
+        <div class="artist">RADWIMPS</div>
+        <audio controls>
+        <source src="../music/RADWIMPS - 大丈夫 (Movie edit).mp3" type="audio/mpeg">
+        </audio>
+        </li>
+        <li>
+        <div class="title">5.すずめ feat.十明</div>
+        <div class="artist">RADWIMPS</div>
+        <audio controls>
+        <source src="../music/RADWIMPS、十明 - すずめ feat.十明.mp3" type="audio/mpeg">
+        </audio>
+        </li>
+        <li>
+        <div class="title">6.なんでもないや</div>
+        <div class="artist">RADWIMPS</div>
+        <audio controls>
+        <source src="../music/RADWIMPS-なんでもないや.mp3" type="audio/mpeg">
+        </audio>
+        </li>
+        <li>
+        <div class="title">7.夢灯籠</div>
+        <div class="artist">RADWIMPS</div>
+        <audio controls>
+        <source src="../music/RADWIMPS-夢灯籠.mp3" type="audio/mpeg">
+        </audio>
+        </li>
+        <li>
+        <div class="title">8.前前前世(Movie ver.)</div>
+        <div class="artist">RADWIMPS</div>
+        <audio controls>
+        <source src="../music/前前前世(Movie ver.).mp3" type="audio/mpeg">
+        </audio>
+        </li>
+        <li>
+        <div class="title">9.グランドエスケープ (Movie edit)</div>
+        <div class="artist">RADWIMPS</div>
+        <audio controls>
+        <source src="../music/三浦透子、RADWIMPS - グランドエスケープ (Movie edit).mp3" type="audio/mpeg">
+        </audio>
+        </li>
+        </ul>
+        </div>
+        </div>
+        <div class="return-bar">
+            <button class="return-button" type="submit"><a href="../html/home.html">返回首页</a></button>
+        </div>
+</body>
+</html>

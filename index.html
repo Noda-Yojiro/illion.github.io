@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>音乐网站♪-轮播图</title>
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: black;
+      overflow: hidden;
+    }
+
+    #stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .star {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      /* width: 0.25%;
+      height: 0.25%; */
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkling 1s infinite;
+    }
+
+    @keyframes twinkling {
+      0%, 100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    img{
+      opacity: 1;
+    }
+
+    #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            background-image: url('8.jpg');
+            background-size: cover;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+        }
+  </style>
+</head>
+<body>
+  <!-- 插入了两个粒子效果，屏蔽任意一个效果可以展示另一个效果，粒子背景最多只能存在1个！ -->
+  <div id="stars"></div>
+  <!-- <div id="particles-js"></div> -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <section class="main swiper mySwiper">
+    <div class="wrapper swiper-wrapper">
+      <div class="slide swiper-slide">
+        <img src="images/start.webp" alt="" class="image" />
+        <div class="image-data">
+          <span class="text">带上耳机，别问为什么，用心感受就是对我们最好的回复！</span>
+          <h2>
+            "音乐，魅力在耳" <br />
+            - 用音乐感受无限魅力。
+          </h2>
+          <a href="html/home.html" class="button">进入</a>
+        </div>
+      </div>
+      <div class="slide swiper-slide">
+        <img src="images/huayu.webp" alt="" class="image" />
+        <div class="image-data">
+          <span class="text">华语，承载几千年的文化，大声试着唱出来！</span>
+          <h2>
+            "用音乐奏响生活" <br />
+            - 让音乐成为你生活的乐章。
+          </h2>
+          <a href="html/home.html" class="button">进入</a>
+        </div>
+      </div>
+      <div class="slide swiper-slide">
+        <img src="images/popular.webp" alt="" class="image" />
+        <div class="image-data">
+          <span class="text">跟随音乐的节奏，追求时尚的步伐！</span>
+          <h2>
+            "时尚伴你，散发自信"  <br />
+            - 披上时尚，自信闪耀。
+          </h2>
+          <a href="html/home.html" class="button">进入</a>
+        </div>
+      </div>
+      <div class="slide swiper-slide">
+        <img src="images/rock.jpeg" alt="" class="image" />
+        <div class="image-data">
+          <span class="text">感受摇滚的力量，让音乐燃烧你的灵魂！</span>
+          <h2>
+            "摇滚，释放内心的狂野" <br />
+            - 让内心的狂野在摇滚乐中解放。
+          </h2>
+          <a href="html/home.html" class="button">进入</a>
+        </div>
+      </div>
+      <div class="slide swiper-slide">
+        <img src="images/electronic music.jpeg" alt="" class="image" />
+        <div class="image-data">
+          <span class="text">尽情享受电音的魔力，让节奏穿透你的耳膜，身体随之起舞!</span>
+          <h2>
+            "身临其境的电音体验 "<br />
+            - 领略最纯粹的音乐魅力！
+          </h2>
+          <a href="html/home.html" class="button">进入</a>
+        </div>
+      </div>
+      <div class="slide swiper-slide">
+        <img src="images/pure music.jpeg" alt="" class="image" />
+        <div class="image-data">
+          <span class="text">远离喧嚣,沐浴纯净音韵,寻找内心的宁静！</span>
+          <h2>
+            "走进纯音乐的世界 "  <br />
+            - 感受那独特的情感共振！
+          </h2>
+          <a href="html/home.html" class="button">进入</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-button-next nav-btn"></div>
+    <div class="swiper-button-prev nav-btn"></div>
+    <div class="swiper-pagination"></div>
+  </section>
+
+  <script src="./js/swiper-bundle.min.js"></script>
+  <script src="./js/background particle.js"></script>
+  <script>
+    // 自动的轮播图代码↓
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      loop: true,
+      autoplay: {
+        delay: 3000, // 自动切换的时间间隔，单位为毫秒（此处设置为3秒）
+        disableOnInteraction: false // 用户操作后是否停止自动切换
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+    // 自动的轮播图代码↑
+
+    // 繁星闪烁代码↓
+    var starsContainer = document.getElementById('stars');
+    var numberOfStars = 200;
+
+    for (var i = 0; i < numberOfStars; i++) {
+      var star = document.createElement('div');
+      star.className = 'star';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.animationDelay = Math.random() + 's';
+      starsContainer.appendChild(star);
+    }
+    // 繁星闪烁代码↑
+  </script>
+</body>
+</html>

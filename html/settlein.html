@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>音乐人入驻</title>
+  <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../css/settlein.css">
+</head>
+<body>
+  <section class="main swiper mySwiper">
+    <div class="wrapper swiper-wrapper">
+      <div class="slide swiper-slide">
+        <video autoplay muted loop id="bg-video">
+          <source src="../video/background/RADWIMPS - いいんですか_ 2017 ver. [Official Music Video].mp4" type="video/mp4">
+        </video>
+        <div class="image-data">
+          <span class="text">欢迎加入我们，入驻音乐人是每个音乐梦想家最明智的选择</span>
+          <h2>
+            "让您的音乐梦想照进现实，" <br />
+            - 成为我们的音乐人！
+          </h2>
+          <a href="#" class="button">申请入驻</a>
+        </div>
+      </div>
+      <div class="slide swiper-slide">
+        <video autoplay muted loop id="bg-video">
+          <source src="../video/background/【官方】RADWIMPS - 大団円 feat.ZORN.mp4" type="video/mp4">
+        </video>
+        <div class="image-data">
+          <span class="text">欢迎加入我们，入驻音乐人是每个音乐梦想家最明智的选择</span>
+          <h2>
+            "加入我们，" <br />
+            - 与世界分享您的音乐才华！
+          </h2>
+          <a href="#" class="button">申请入驻</a>
+        </div>
+      </div>
+      <div class="slide swiper-slide">
+        <video autoplay muted loop id="bg-video">
+          <source src="../video/background/【RAD-only字幕组】RADWIMPS《人間ごっこ》中日字幕 - 1.【RAD-only字幕组】RADWIMPS《人間ごっこ》中日字幕(Av602261312,P1).mp4" type="video/mp4">
+        </video>
+        <div class="image-data">
+          <span class="text">欢迎加入我们，入驻音乐人是每个音乐梦想家最明智的选择</span>
+          <h2>
+            "我们欢迎有才华的音乐人加入，"  <br />
+            - 成为我们的一员！
+          </h2>
+          <a href="#" class="button">申请入驻</a>
+        </div>
+      </div>
+      <div class="slide swiper-slide">
+        <video autoplay muted loop id="bg-video">
+          <source src="../video/background/4K级催泪现场！《夢番地》-RADWIMPS.mp4" type="video/mp4">
+        </video>
+        <div class="image-data">
+          <span class="text">欢迎加入我们，入驻音乐人是每个音乐梦想家最明智的选择</span>
+          <h2>
+            "音乐是一种语言，" <br />
+            - 让我们一起用音乐传递爱与希望！
+          </h2>
+          <a href="#" class="button">申请入驻</a>
+        </div>
+      </div>
+      <div class="slide swiper-slide">
+        <video autoplay muted loop id="bg-video">
+          <source src="../video/background/RADWIMPS - 正解 [Official Live Video from ANTI ANTI GENERATION TOUR 2019].mp4" type="video/mp4">
+        </video>
+        <div class="image-data">
+          <span class="text">欢迎加入我们，入驻音乐人是每个音乐梦想家最明智的选择</span>
+          <h2>
+            "我们致力于发掘优秀的音乐人，" <br />
+            - 成为我们的一员，让您的才华得到展现！
+          </h2>
+          <a href="#" class="button">申请入驻</a>
+        </div>
+      </div>
+      <div class="slide swiper-slide">
+        <video autoplay muted loop id="bg-video">
+          <source src="../video/background/RADWIMPS - By My Side.mp4" type="video/mp4">
+        </video>
+        <div class="image-data">
+          <span class="text">欢迎加入我们，入驻音乐人是每个音乐梦想家最明智的选择</span>
+          <h2>
+            "音乐可以让人感受到爱与温暖， "  <br />
+            - 加入我们，让您的音乐传递这份美好！
+          </h2>
+          <a href="#" class="button">申请入驻</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-button-next nav-btn"></div>
+    <div class="swiper-button-prev nav-btn"></div>
+    <div class="swiper-pagination"></div>
+  </section>
+  
+  <h1 style="text-align: center; color: #333;margin-bottom: 30px;" >欢迎申请音乐人入驻</h1>
+  <form id="application-form" action="入驻提交.php" method="post">
+    <label for="name">艺名</label>
+    <input type="text" name="name" placeholder="请输入您的艺名" required>
+
+    <label for="email">邮箱</label>
+    <input type="email" name="email" placeholder="请输入您的邮箱" required>
+
+    <label for="genre">音乐风格：</label>
+    <input type="text" id="genre" name="genre" placeholder="简要介绍您的音乐风格" required>
+
+    <label for="bio">个人简介</label>
+    <textarea name="bio" placeholder="请简要介绍一下您自己" required></textarea>
+
+    <p class="note">请提供以下信息以申请入驻我们的音乐平台。我们会尽快审核您的申请。</p>
+    <p class="note">只有通过审核的音乐人才可以在平台上发布和推广自己的音乐作品。</p>
+    
+    <input type="submit" value="提交申请">
+
+    <p class="success-message" style="display: none;">您的申请已提交成功！我们会尽快与您取得联系。</p>
+    <p class="error-message" style="display: none;">抱歉，提交申请时出现了错误。请重新尝试。</p>
+
+    <p class="privacy-policy">我们重视您的隐私，并承诺仅将您的个人信息用于入驻申请的处理。请阅读我们的<a href="隐私政策.html">隐私政策</a>，以了解更多信息。</p>
+
+          <!-- 插入音乐人的图片 -->
+          <img class="bio-img" src="../images/artist.jpg" alt="音乐人照片">
+
+          <!-- 添加更多说明文字 -->
+          <div class="instructions">
+            <p>请填写以上表单来申请入驻音乐人。</p>
+            <p>我们欢迎各种音乐风格，无论是流行、摇滚、电子、嘻哈或古典。</p>
+            <p>加入我们，展示你的音乐才华，并与全球观众分享你的音乐。</p>
+          </div>
+      
+          <!-- 添加更多效果和信息 -->
+          <div class="main-content">
+            <div class="info-card">
+              <h2 style="color: #007BFF;margin-bottom: 20px;" >入驻要求</h2>
+              <p>我们鼓励原创音乐和独立音乐人加入。</p>
+              <p>你可以是独唱歌手、乐队成员、制作人或DJ。</p>
+              <p>你的音乐作品应该符合版权法和道德标准。</p>
+            </div>
+      
+            <div class="info-card">
+              <h2 style="color: #007BFF;margin-bottom: 20px;">入驻优势</h2>
+              <p>通过入驻我们的平台，你将获得全球观众的机会。</p>
+              <p>你的音乐将在流媒体平台上推广。</p>
+              <p>你将有机会与其他音乐人和产业专业人士合作。</p>
+            </div>
+
+    <div class="footer">
+      &copy; 2023 音乐人入驻申请 | RADWIMPS'FANS All rights reserved
+    </div>
+  </form>
+
+  <script src="../js/swiper-bundle.min.js"></script>
+  <script>
+    // 手动的轮播视频代码↓
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+    var videos = document.querySelectorAll('.video');
+    videos.forEach(function(video) {
+      video.addEventListener('ended', function() {
+        swiper.slideNext();
+      });
+    });
+    // 手动的轮播视频代码↑
+
+    // 表单提交成功后显示成功消息
+    var form = document.getElementById('application-form');
+    var successMessage = document.querySelector('.success-message');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // 阻止表单默认提交行为
+
+      // 在此处添加 Ajax 请求或其他逻辑代码，将表单数据提交到服务器
+
+      // 假设请求成功，显示成功消息
+      showSuccessMessage();
+    });
+
+    function showSuccessMessage() {
+      successMessage.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

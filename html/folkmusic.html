@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>民谣</title>
+    <style>
+        body {
+            background-color: #f0faff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .music-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .music-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: rgb(255, 255, 255,0.2);
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .music-list li .artist {
+            color: brown;
+        }
+        .return-bar {
+        position: fixed;
+        top: 80px;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        margin: 20px auto;
+    }
+
+        .return-button {
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .return-button a{
+            text-decoration: none;
+        }
+        .return-button:hover {
+            box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.5);
+            text-decoration: underline;
+            text-decoration-color: black;
+        }
+        .box{
+            width: 100%;
+            height: 100%;
+            background-image: url("../images/民谣.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>民谣</h1>
+            <ul class="music-list">
+                <li>
+                    <p>1.七月上</p>
+                    <div class="artist">Jam</div>
+                    <audio controls>
+                        <source src="../music/民谣/Jam - 七月上.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <p>2.云烟成雨</p>
+                    <div class="artist">房东的猫</div>
+                    <audio controls>
+                        <source src="../music/民谣/房东的猫 - 云烟成雨.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <p>3.生如夏花</p>
+                    <div class="artist">朴树</div>
+                    <audio controls>
+                        <source src="../music/民谣/朴树 - 生如夏花.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <p>4.这一生关于你的风景</p>
+                    <div class="artist">枯木逢春 / 许钧</div>
+                    <audio controls>
+                        <source src="../music/民谣/枯木逢春 - 这一生关于你的风景.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <p>5.同桌的你 (风行版)</p>
+                    <div class="artist">老狼</div>
+                    <audio controls>
+                        <source src="../music/民谣/老狼 - 同桌的你 (风行版).mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <p>6.火红的萨日朗</p>
+                    <div class="artist">要不要买菜</div>
+                    <audio controls>
+                        <source src="../music/民谣/要不要买菜 - 火红的萨日朗.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <p>7.蓝莲花</p>
+                    <div class="artist">许巍</div>
+                    <audio controls>
+                        <source src="../music/民谣/许巍 - 蓝莲花.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <p>8.一生有你</p>
+                    <div class="artist">水木年华</div>
+                    <audio controls>
+                        <source src="../music/民谣/水木年华 - 一生有你.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <p>9.成都</p>
+                    <div class="artist">赵雷</div>
+                    <audio controls>
+                        <source src="../music/民谣/赵雷 - 成都.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <p>10.多想在平庸的生活拥抱你 (Live)</p>
+                    <div class="artist">隔壁老樊</div>
+                    <audio controls>
+                        <source src="../music/民谣/隔壁老樊 - 多想在平庸的生活拥抱你 (Live).mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="return-bar">
+        <button class="return-button" type="submit"><a href="../html/home.html">返回首页</a></button>
+    </div>
+</div>
+</body>
+</html>

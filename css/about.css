@@ -1,0 +1,224 @@
+@font-face{
+	font-family: "情书体";
+	src: url("../fonts/情书体.otf");
+  }
+
+body {
+    /* font-family: "情书体"; */
+    font-family: Arial, sans-serif;
+    background-color: #f0faff;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+}
+.profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.icons {
+    display: flex;
+    align-items: center;
+}
+.icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+.search-bar {
+    position: relative;
+    margin-left: 20px;
+    top: -60px;
+    border-bottom: 1px solid black;
+    width: 200px;
+    padding: 10px;
+}
+.search-input {
+    border: none;
+    margin-left: 50px;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+    padding: 5px 0;
+}
+.search-underline {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 220px;
+    height: 2px;
+    background-color: #cb676c;
+    transform: scaleX(0);
+    transform-origin: bottom;
+    transition: transform 0.2s ease-in-out;
+}
+.search-input:focus + .search-underline {
+    transform: scaleX(1);
+}
+.title {
+    text-align: center;
+    margin-top: -200px;
+}
+.subtitle {
+    text-align: center;
+    margin: 30px;
+}
+.usersandlabel {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.user-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-color: lightgreen;
+}
+.tag-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-color: yellow;
+}
+.return-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-color: #4db2ec;
+}
+.main-image {
+    display: block;
+    margin: 60px;
+    width: 830px;
+    height: 600px;
+}
+.image-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -20px;
+}
+.small-image {
+    width: 200px;
+    height: 150px;
+    margin: 0;
+    padding: 0;
+    /* background-color: lightcoral; */
+}
+.card {
+    margin-top: -985px;
+    margin-left: 950px;
+    background-color: #ffffff;
+    width: 450px;
+    height: 760px;
+}
+/* .card-button {
+    display: block;
+    margin: 20px auto;
+    width: 100px;
+    height: 40px;
+    background-color: red;
+    color: black;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+} */
+
+a{
+    text-decoration: none;
+}
+
+.image-description {
+    text-align: center;
+}
+
+.button {
+position: absolute;
+margin-left: 950px;
+margin-top: 100px;
+padding: 10px 22px;
+border-radius: 6px;
+border: none;
+color: #fff;
+cursor: pointer;
+background-color: #7d2ae8;
+transition: all 0.2s ease;
+}
+.button:active {
+transform: scale(0.96);
+}
+.button:before,
+.button:after {
+position: absolute;
+content: "";
+width: 150%;
+left: 50%;
+height: 100%;
+transform: translateX(-50%);
+z-index: -1000;
+background-repeat: no-repeat;
+}
+.button.animate::before {
+top: -70%;
+background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+10% 10%, 18% 18%;
+animation: greentopBubbles ease-in-out 0.6s forwards infinite;
+}
+@keyframes greentopBubbles {
+0% {
+background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+40% 90%, 55% 90%, 70% 90%;
+}
+50% {
+background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+50% 50%, 65% 20%, 90% 30%;
+}
+100% {
+background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+50% 40%, 65% 10%, 90% 20%;
+background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+}
+}
+.button.animate::after {
+bottom: -70%;
+background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+animation: greenbottomBubbles ease-in-out 0.6s forwards infinite;
+}
+@keyframes greenbottomBubbles {
+0% {
+background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+70% -10%, 70% 0%;
+}
+50% {
+background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+105% 0%;
+}
+100% {
+background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+110% 10%;
+background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+}
+}

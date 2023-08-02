@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>华语</title>
+    <style>
+        body {
+            background-color: #f0faff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .music-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .music-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: rgb(255, 255, 255,0.2);
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .music-list li .artist {
+            color: red;
+        }
+        .return-bar {
+        position: fixed;
+        top: 80px;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        margin: 20px auto;
+    }
+
+        .return-button {
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .return-button a{
+            text-decoration: none;
+        }
+        .return-button:hover {
+            box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.5);
+            text-decoration: underline;
+            text-decoration-color: black;
+        }
+        .box{
+            width: 100%;
+            height: 100%;
+            background-image: url("../images/华语.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>华语</h1>
+            <ul class="music-list">
+                <li>
+                    <div class="title">1.四季予你</div>
+                    <div class="artist">程响</div>
+                    <audio controls>
+                        <source src="../music/华语/程响 - 四季予你.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <div class="title">2.阿拉斯加海湾</div>
+                    <div class="artist">蓝心羽</div>
+                    <audio controls>
+                        <source src="../music/华语/蓝心羽 - 阿拉斯加海湾.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <div class="title">3.小情歌</div>
+                    <div class="artist">苏打绿</div>
+                    <audio controls>
+                        <source src="../music/华语/苏打绿 - 小情歌.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <div class="title">4.有何不可</div>
+                    <div class="artist">许嵩</div>
+                    <audio controls>
+                        <source src="../music/华语/有何不可-许嵩.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <div class="title">5.新地球</div>
+                    <div class="artist">林俊杰</div>
+                    <audio controls>
+                        <source src="../music/华语/新地球-林俊杰.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <div class="title">6.稻香</div>
+                    <div class="artist">周杰伦</div>
+                    <audio controls>
+                        <source src="../music/华语/稻香-周杰伦.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <div class="title">7.天外来物</div>
+                    <div class="artist">薛之谦</div>
+                    <audio controls>
+                        <source src="../music/华语/天外来物-薛之谦.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <div class="title">8.童话</div>
+                    <div class="artist">光良</div>
+                    <audio controls>
+                        <source src="../music/华语/童话-光良.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <div class="title">9.棉花糖</div>
+                    <div class="artist">至上励合</div>
+                    <audio controls>
+                        <source src="../music/华语/棉花糖-至上励合.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+                <li>
+                    <div class="title">10.开往午夜的早晨</div>
+                    <div class="artist">张碧晨</div>
+                    <audio controls>
+                        <source src="../music/华语/开往午夜的早晨-张碧晨.mp3" type="audio/mpeg">
+                    </audio>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="return-bar">
+        <button class="return-button" type="submit"><a href="../html/home.html">返回首页</a></button>
+    </div>
+    
+</body>
+</html>

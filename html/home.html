@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>音乐网站♪</title>
+	<style>
+		.search-container {
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    border: 2px solid #222222;
+}
+
+#search-button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #222222;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #4db2ec;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.nav-container {
+
+position: fixed;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 100%;
+}
+
+.content {
+    margin-top: 70px;
+    padding: 20px;
+}
+
+#svg,.svg{
+    background-color: #000222;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.svg.loaded {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#circle{
+    stroke-dasharray:63;
+    stroke-dashoffset: 0;
+    transform-origin: center center;
+    animation: rotate 1s linear infinite,stroke 3.9s linear;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes stroke{
+    0%{
+        stroke-dashoffset: 0;
+    }
+    50%{
+        stroke-dashoffset: 63;
+    }
+    100%{
+        stroke-dashoffset: 126;
+    }
+}
+	</style>
+	<link rel="stylesheet" type="text/css" href="../css/home.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"><!-- 热度/喜欢/评论的样式图标 -->
+	<!-- <link rel="preconnect" href="https://fonts.googleapis.com">谷歌字体 -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="svg">
+		<svg viewBox="0 0 200 100" id="svg">
+			<circle cx="100" cy="50" r="10" stroke="#fff"
+			stroke-width="2" stroke-linecap="round" fill="none"
+			id="circle"/>
+		</svg>
+	</div>
+	<div id="content">
+		<div class="navbar">
+			<h1><span style="color: #dc143c;">音乐</span><span style="color: #222222;">网站</span><span style="color: #dc143c;">♪</span></h1>
+			<div class="search-container">
+				<input type="text" id="search-input" placeholder="搜点什么吧(σ≧︎▽︎≦︎)σ。" list="search-hints">
+				<button id="search-button" onclick="search()">搜索</button>
+			</div>
+
+			<datalist id="search-hints">
+				<option value="RADWIMPS">
+				<option value="なんでもないや">
+				<option value="愛にできることはまだあるかい">
+				<option value="カナタハルカ">
+				<option value="KANASHIBARI">
+				<option value="By My Side">
+				<option value="人間ごつこ">
+			</datalist>
+			
+		</div>
+			<section id="home">
+			<div class="box">
+				<div class="content">
+					<nav>
+						<ul>
+							<!-- <li class="nav-item" data-text="Home"><a href="#home">Home</a></li> -->
+							<li><a href="#home" onmouseover="changeLanguage('首页')" onmouseout="changeLanguage('Home')">Home</a></li>
+							<li class="nav-item" data-text="About"><a href="about.html" onmouseover="changeLanguage('关于')" onmouseout="changeLanguage('About')">About</a></li>
+							<li class="nav-menu">
+								<a href="#">MV</a>
+								<div class="dropdown-content">
+									<a href="#">君の名は</a>
+									<a href="#">天气の子</a>
+									<a href="#">すずめの戸締まり</a>
+									<a href="#">余命十年</a>
+								</div>
+							</li>
+							<li class="nav-menu">
+								<a href="#">歌单/分类</a>
+								<div class="dropdown-content">
+									<a href="huayu.html">华语</a>
+									<a href="popular.html">流行</a>
+									<a href="rock.html">摇滚</a>
+									<a href="electronicmusic.html">电音</a>
+									<a href="pure-music.html">纯音乐</a>
+									<a href="folkmusic.html">民谣</a>
+								</div>
+							</li>
+							<li class="nav-item" data-text="Settle in/Become a musician"><a href="settlein.html"  onmouseover="changeLanguage('入驻/成为音乐人')" onmouseout="changeLanguage('Settle in/Become a musician')">Settle in/Become a musician</a></li>
+							<!-- <li><a href="../Playable PIANO in JavaScript/index.html">小钢琴</a></li> -->
+							<li class="nav-item" data-text="Mine"><a href="mine.html"  onmouseover="changeLanguage('我的')" onmouseout="changeLanguage('Mine')">Mine</a></li>
+							<li class="nav-item" data-text="Sign up"><a href="login.html"  onmouseover="changeLanguage('登录')" onmouseout="changeLanguage('Sign up')">Sign up</a></li>
+							<!-- <li class="nav-item" data-text="VIP"><a href="viplv.html"  onmouseover="changeLanguage('会员')" onmouseout="changeLanguage('VIP')">VIP</a></li> -->
+							<li class="nav-item" data-text="Feedback"><a href="feedback.html"  onmouseover="changeLanguage('反馈')" onmouseout="changeLanguage('Feedback')">Feedback</a></li>
+						</ul>
+					</nav>
+			</div>
+		</section>
+	
+			<video autoplay muted loop id="bg-video">
+				<source src="../video/background/HOME music video background.mp4" type="video/mp4">
+			</video>
+	
+			<!-- 没什么用的代码，但不完全没用 -->
+		 <div class="slideshow" onmousemove="moveSlides(event)">
+			<div class="slide">
+			  <div class="image" style="background-image: url('images/なんでもないや.jpg');"></div>
+			</div>
+			<div class="slide">
+			  <div class="image" style="background-image: url('images/グランドエスケープ\ \(Movie\ edit\).jpg');"></div>
+			</div>
+			<div class="slide">
+			  <div class="image" style="background-image: url('images/余命十年（うるうびと）.jpg');"></div>
+			</div>
+		  </div>
+	
+			<main>
+				<section class="featured">
+					<h2>君の名は。</h2>
+					<div class="song-grid">
+						<div class="song">
+							<img src="../images/なんでもないや.jpg" alt="歌曲封面">
+							<h3>なんでもないや</h3>
+							<p>RADWIMPS</p>
+							<button class="like-button" onclick="likeSong(1)">（当前热度）<i class="fas fa-thumbs-up">热度</i><span class="like-count" id="like-count-1">0</span></button>
+							<button class="favorite-button" onclick="favoriteSong(1)">（添加到我的歌单）<i class="fas fa-heart">喜欢</i><span class="favorite-count" id="favorite-count-1">0</span></button>
+							<button class="comment-button" onclick="commentSong(1)">（当前评论次数）<i class="fas fa-comment">评论</i><span class="comment-count" id="comment-count-1">0</span></button>
+							<audio controls>
+								<source src="../music/RADWIMPS-なんでもないや.mp3" type="audio/mpeg">
+							</audio>
+						</div>
+						<div class="song">
+							<img src="../images/夢灯籠.jpg" alt="歌曲封面">
+							<h3>夢灯籠</h3>
+							<p>RADWIMPS</p>
+							<button class="like-button" onclick="likeSong(1)">（当前热度）<i class="fas fa-thumbs-up">热度</i><span class="like-count" id="like-count-1">0</span></button>
+							<button class="favorite-button" onclick="favoriteSong(1)">（添加到我的歌单）<i class="fas fa-heart">喜欢</i><span class="favorite-count" id="favorite-count-1">0</span></button>
+							<button class="comment-button" onclick="commentSong(1)">（当前评论次数）<i class="fas fa-comment">评论</i><span class="comment-count" id="comment-count-1">0</span></button>
+							<audio controls>
+								<source src="../music/RADWIMPS-夢灯籠.mp3" type="audio/mpeg">
+							</audio>
+						</div>
+						<div class="song">
+							<img src="../images/前前前世.jpg" alt="歌曲封面">
+							<h3>前前前世(Movie ver.)</h3>
+							<p>RADWIMPS</p>
+							<button class="like-button" onclick="likeSong(1)">（当前热度）<i class="fas fa-thumbs-up">热度</i><span class="like-count" id="like-count-1">0</span></button>
+							<button class="favorite-button" onclick="favoriteSong(1)">（添加到我的歌单）<i class="fas fa-heart">喜欢</i><span class="favorite-count" id="favorite-count-1">0</span></button>
+							<button class="comment-button" onclick="commentSong(1)">（当前评论次数）<i class="fas fa-comment">评论</i><span class="comment-count" id="comment-count-1">0</span></button>
+							<audio controls>
+								<source src="../music/前前前世(Movie ver.).mp3" type="audio/mpeg">
+							</audio>
+						</div>
+					</div>
+				</section>
+			</main>
+			<main>
+			</section>
+			<section class="featured">
+				<h2>天气の子</h2>
+				<div class="song-grid">
+					<div class="song">
+						<img src="../images/大丈夫.jpg" alt="歌曲封面">
+						<h3>大丈夫</h3>
+						<p>RADWIMPS</p>
+						<button class="like-button" onclick="likeSong(1)">（当前热度）<i class="fas fa-thumbs-up">热度</i><span class="like-count" id="like-count-1">0</span></button>
+					<button class="favorite-button" onclick="favoriteSong(1)">（添加到我的歌单）<i class="fas fa-heart">喜欢</i><span class="favorite-count" id="favorite-count-1">0</span></button>
+					<button class="comment-button" onclick="commentSong(1)">（当前评论次数）<i class="fas fa-comment">评论</i><span class="comment-count" id="comment-count-1">0</span></button>
+						<audio controls>
+							<source src="../music/RADWIMPS - 大丈夫 (Movie edit).mp3" type="audio/mpeg">
+						</audio>
+					</div>
+					<div class="song">
+						<img src="../images/愛にできることはまだあるかい.jpg" alt="歌曲封面">
+						<h3>愛にできることはまだあるかい</h3>
+						<p>RADWIMPS</p>
+						<button class="like-button" onclick="likeSong(1)">（当前热度）<i class="fas fa-thumbs-up">热度</i><span class="like-count" id="like-count-1">0</span></button>
+						<button class="favorite-button" onclick="favoriteSong(1)">（添加到我的歌单）<i class="fas fa-heart">喜欢</i><span class="favorite-count" id="favorite-count-1">0</span></button>
+						<button class="comment-button" onclick="commentSong(1)">（当前评论次数）<i class="fas fa-comment">评论</i><span class="comment-count" id="comment-count-1">0</span></button>
+						<audio controls>
+							<source src="../music/RADWIMPS - 愛にできることはまだあるかい (爱能做到的还有什么) (Movie edit).mp3" type="audio/mpeg">
+						</audio>
+					</div>
+					<div class="song">
+						<img src="../images/グランドエスケープ (Movie edit).jpg" alt="歌曲封面">
+						<h3>グランドエスケープ (Movie edit)</h3>
+						<p>RADWIMPS</p>
+						<button class="like-button" onclick="likeSong(1)">（当前热度）<i class="fas fa-thumbs-up">热度</i><span class="like-count" id="like-count-1">0</span></button>
+						<button class="favorite-button" onclick="favoriteSong(1)">（添加到我的歌单）<i class="fas fa-heart">喜欢</i><span class="favorite-count" id="favorite-count-1">0</span></button>
+						<button class="comment-button" onclick="commentSong(1)">（当前评论次数）<i class="fas fa-comment">评论</i><span class="comment-count" id="comment-count-1">0</span></button>
+						<audio controls>
+							<source src="../music/三浦透子、RADWIMPS - グランドエスケープ (Movie edit).mp3" type="audio/mpeg">
+						</audio>
+					</div>
+				</div>
+			</section>
+			</main>
+				<main>
+					<section class="featured">
+						<h2>すずめの戸締まり</h2>
+						<div class="song-grid">
+							<div class="song">
+								<img src="../images/铃芽之旅.jpg" alt="歌曲封面">
+								<h3>すずめ（铃芽）</h3>
+								<p>RADWIMPS、十明</p>
+								<button class="like-button" onclick="likeSong(1)">（当前热度）<i class="fas fa-thumbs-up">热度</i><span class="like-count" id="like-count-1">0</span></button>
+								<button class="favorite-button" onclick="favoriteSong(1)">（添加到我的歌单）<i class="fas fa-heart">喜欢</i><span class="favorite-count" id="favorite-count-1">0</span></button>
+								<button class="comment-button" onclick="commentSong(1)">（当前评论次数）<i class="fas fa-comment">评论</i><span class="comment-count" id="comment-count-1">0</span></button>
+								<audio controls>
+									<source src="../music/RADWIMPS、十明 - すずめ feat.十明.mp3" type="audio/mpeg">
+								</audio>
+							</div>
+							<div class="song">
+								<img src="../images/铃芽之旅.jpg" alt="歌曲封面">
+								<h3>カナタハルカ（遥远的彼方）</h3>
+								<p>RADWIMPS</p>
+								<button class="like-button" onclick="likeSong(1)">（当前热度）<i class="fas fa-thumbs-up">热度</i><span class="like-count" id="like-count-1">0</span></button>
+								<button class="favorite-button" onclick="favoriteSong(1)">（添加到我的歌单）<i class="fas fa-heart">喜欢</i><span class="favorite-count" id="favorite-count-1">0</span></button>
+								<button class="comment-button" onclick="commentSong(1)">（当前评论次数）<i class="fas fa-comment">评论</i><span class="comment-count" id="comment-count-1">0</span></button>
+								<audio controls>
+									<source src="../music/RADWIMPS - カナタハルカ.mp3" type="audio/mpeg">
+								</audio>
+							</div>
+							<div class="song">
+								<img src="../images/铃芽之旅.jpg" alt="歌曲封面">
+								<h3>すずめの涙 (铃芽之泪)</h3>
+								<p>RADWIMPS</p>
+								<button class="like-button" onclick="likeSong(1)">（当前热度）<i class="fas fa-thumbs-up">热度</i><span class="like-count" id="like-count-1">0</span></button>
+								<button class="favorite-button" onclick="favoriteSong(1)">（添加到我的歌单）<i class="fas fa-heart">喜欢</i><span class="favorite-count" id="favorite-count-1">0</span></button>
+								<button class="comment-button" onclick="commentSong(1)">（当前评论次数）<i class="fas fa-comment">评论</i><span class="comment-count" id="comment-count-1">0</span></button>
+								<audio controls>
+									<source src="../music/RADWIMPS - すずめの涙 (铃芽之泪).mp3" type="audio/mpeg">
+								</audio>
+							</div>
+						</div>
+					</section>
+					<section class="featured">
+						<h2>余命十年</h2>
+						<div class="song-grid">
+							<div class="song">
+								<img src="../images/余命十年（うるうびと）.jpg" alt="歌曲封面">
+								<h3>うるうびと（闰人）</h3>
+								<p>RADWIMPS</p>
+								<button class="like-button" onclick="likeSong(1)">（当前热度）<i class="fas fa-thumbs-up">热度</i><span class="like-count" id="like-count-1">0</span></button>
+								<button class="favorite-button" onclick="favoriteSong(1)">（添加到我的歌单）<i class="fas fa-heart">喜欢</i><span class="favorite-count" id="favorite-count-1">0</span></button>
+								<button class="comment-button" onclick="commentSong(1)">（当前评论次数）<i class="fas fa-comment">评论</i><span class="comment-count" id="comment-count-1">0</span></button>
+								<audio controls>
+									<source src="../music/RADWIMPS-うるうびと.mp3" type="audio/mpeg">
+								</audio>
+							</div>
+							<div class="song">
+								<img src="../images/余命十年（うるうびと）.jpg" alt="歌曲封面">
+								<h3>うるうびと（闰人）</h3>
+								<p>RADWIMPS</p>
+								<button class="like-button" onclick="likeSong(1)">（当前热度）<i class="fas fa-thumbs-up">热度</i><span class="like-count" id="like-count-1">0</span></button>
+								<button class="favorite-button" onclick="favoriteSong(1)">（添加到我的歌单）<i class="fas fa-heart">喜欢</i><span class="favorite-count" id="favorite-count-1">0</span></button>
+								<button class="comment-button" onclick="commentSong(1)">（当前评论次数）<i class="fas fa-comment">评论</i><span class="comment-count" id="comment-count-1">0</span></button>
+								<audio controls>
+									<source src="../music/RADWIMPS-うるうびと.mp3" type="audio/mpeg">
+								</audio>
+							</div>
+							<div class="song">
+								<img src="../images/余命十年（うるうびと）.jpg" alt="歌曲封面">
+								<h3>うるうびと（闰人）</h3>
+								<p>RADWIMPS</p>
+								<button class="like-button" onclick="likeSong(1)">（当前热度）<i class="fas fa-thumbs-up">热度</i><span class="like-count" id="like-count-1">0</span></button>
+								<button class="favorite-button" onclick="favoriteSong(1)">（添加到我的歌单）<i class="fas fa-heart">喜欢</i><span class="favorite-count" id="favorite-count-1">0</span></button>
+								<button class="comment-button" onclick="commentSong(1)">（当前评论次数）<i class="fas fa-comment">评论</i><span class="comment-count" id="comment-count-1">0</span></button>
+								<audio controls>
+									<source src="../music/RADWIMPS-うるうびと.mp3" type="audio/mpeg">
+								</audio>
+							</div>
+						</div>
+					</section>
+				</main>
+    </div>
+	
+		
+	<script>
+        // 加载动画事件
+		// 禁止滚动
+		function disableScroll() {
+			document.body.style.overflow = 'hidden';
+		}
+
+		// 启用滚动
+		function enableScroll() {
+			document.body.style.overflow = '';
+		}
+
+		// 加载动画完成后显示内容
+		window.onload = function() {
+			// 禁止滚动
+			disableScroll();
+			
+			setTimeout(function() {
+				var svgContainer = document.querySelector('.svg');
+				var contentContainer = document.getElementById('content');
+				svgContainer.style.display = 'none';
+				contentContainer.style.opacity = '1';
+				
+				// 启用滚动
+				enableScroll();
+			}, 4000);
+		}
+
+		    //当滚动页面固定导航栏
+			const navbar = document.querySelector('.navbar');
+			const distance = 200;
+
+			window.addEventListener('scroll', function() {
+			if (window.scrollY > distance) {
+				navbar.classList.add('scroll');
+			} else {
+				navbar.classList.remove('scroll');
+			}
+			});
+
+		// 热度喜欢评论代码
+		let likeCounts = {
+			1: 0,
+			2: 0
+		};
+
+		let favoriteCounts = {
+			1: 0,
+			2: 0
+		};
+
+		let commentCounts = {
+			1: 0,
+			2: 0
+		};
+
+		function likeSong(songId) {
+			likeCounts[songId]++;
+			const likeCountElement = document.getElementById(`like-count-${songId}`);
+			likeCountElement.textContent = likeCounts[songId];
+		}
+
+		function favoriteSong(songId) {
+			favoriteCounts[songId]++;
+			const favoriteCountElement = document.getElementById(`favorite-count-${songId}`);
+			favoriteCountElement.textContent = favoriteCounts[songId];
+		}
+
+		function commentSong(songId) {
+			commentCounts[songId]++;
+			const commentCountElement = document.getElementById(`comment-count-${songId}`);
+			commentCountElement.textContent = commentCounts[songId];
+		}
+
+		// 监听窗口滚动事件
+		window.addEventListener("scroll", function() {
+			var navbar = document.querySelector(".navbar");
+			var sticky = navbar.offsetTop;
+
+			if (window.pageYOffset >= sticky) {
+				navbar.classList.add("sticky");
+			} else {
+				navbar.classList.remove("sticky");
+			}
+		});
+		//搜索链接
+		//function search() {
+            //var input = document.querySelector('.search-input');
+            //var query = input.value.trim();
+            
+            //if (query !== '') {
+                //var encodedQuery = encodeURIComponent(query)
+                // 搜索引擎
+                //var url = 'https://quark.sm.cn/s?q=' + encodedQuery;夸克搜索
+                //var url = 'https://www.so.com/s?ie=utf-8&q=' + encodedQuery;360搜索
+                //var url = 'https://www.sogou.com/web?query=' + encodedQuery;搜狗搜索
+                //var url = 'https://www.baidu.com/s?wd=' + encodedQuery;百度搜索
+                // var url = 'https://cn.bing.com/search?q=' + encodedQuery;必应搜索
+                // var url = 'https://www.google.com.hk/advanced_search?hl=' + encodedQuery;谷歌香港搜索
+                // var url = 'https://www.google.com/search?q=' + encodedQuery;谷歌搜索
+                //音乐搜索
+                //var url = 'https://music.163.com/#/search/m/?s=' + encodedQuery;网易云音乐搜索
+                 //var url = 'https://www.kugou.com/yy/html/search.html#searchType=song&searchKeyWord=' + encodedQuery;酷狗音乐搜索
+                // var url = 'https://y.qq.com/n/ryqq/search?w=' + encodedQuery;QQ音乐搜索
+                // var url = 'http://www.kuwo.cn/search/list?key=' + encodedQuery;酷我音乐搜索
+                //window.open(url, '_blank');
+            //}
+            
+            //input.value = '';
+        //}
+
+		 点击搜索相应事件
+		function search() {
+			var input = document.getElementById('search-input').value;
+			var url = 'https://www.kugou.com/yy/html/search.html#searchType=song&searchKeyWord=' + encodeURIComponent(input);
+			window.open(url, '_blank');
+		}
+
+		document.getElementById("search-button").addEventListener("click", function() {
+			search();
+		});
+
+		    function changeLanguage(text) {
+      event.target.textContent = text;
+    }
+	// //鼠标移动导航栏改变文字语言
+	// 	window.onload = function() {
+    //   var homeLink = document.getElementById("home-link");
+    //   var aboutLink = document.getElementById("about-link");
+    //   var servicesLink = document.getElementById("services-link");
+    //   var contactLink = document.getElementById("contact-link");
+    //   var SignupLink = document.getElementById("Signup-link");
+    //   var VIPLink = document.getElementById("VIP-link");
+    //   var FeedbackLink = document.getElementById("Feedback-link");
+
+    //   function changeText(link, newText) {
+    //     link.onmouseover = function() {
+    //       link.innerText = newText;
+    //     };
+
+    //     link.onmouseout = function() {
+    //       link.innerText = link.getAttribute('data-text');
+    //     };
+    //   }
+
+    //   changeText(homeLink, "首页");
+    //   changeText(aboutLink, "关于");
+    //   changeText(Settle in Link, "入驻/成为音乐人");
+    //   changeText(contactLink, "我的");
+    //   changeText(contactLink, "登录");
+    //   changeText(VIPLink, "会员");
+    //   changeText(FeedbackLink, "反馈");
+    // };
+	</script>
+</body>
+</html>
